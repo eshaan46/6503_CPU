@@ -1,1 +1,1 @@
-#My Dick is 6 inches long
+YOUER MOM IS GAY
