@@ -7,7 +7,7 @@
 
 - Architecture
 
-- Fundamentall Principles
+- CPU Logic
 
 - Intruction set
 
@@ -67,9 +67,18 @@
 
 - the difference is a interrupt allows the process to countinue where it is left of where killing it forcess a restrts from the starting point
 
-- Now let us discuss how to use them 
-
 - Returning to main body 
     - say you have jumpped to another process by interupting P7 then you want to go back keep in mind the only way to do this is by killing the process since p7 is the lowest either you have to wait for all qued process to finish or kill the all
+ 
+- This is the basic architecture of the CPU adn how it works we will go into further detail about more niche concepts later
 
-- 
+## CPU logic
+
+We will discuss the fundamentall principles of the CPU the niches and the inter workings of it we will dive into a step by step process of the way the CPU functions on a lower level.
+
+To start with you should know that since the Rom is internel sram it needs to be programmed. The way we achieve this is by sending a start code in bits via the SPI pins which is the way through which we program the sram the start signal start the program fetch phase 
+the end signal is sent when all the code is sent after which a end code is sent which tells the CPU to start executing code now that this fact is out of the way we will start
+
+1. first once the CPU is in the execution phase the counter is hardset to 0 and upon which the first instruction comes note that the way instructions are processed is when the main clock signal ticks the counter the instruction is writtent to the instruction register when the counter starts each type of instruction has its own counter for the number of cycles it takes when the time is up the main counter is advanced adn the cycle repeats note that most data goes to certain registers like here the instruction register which is not memory mapped but you can acess.
+
+2. say it is a write instructin to wrt the value to a register the instruction is decoded and the values are set accordingly.
