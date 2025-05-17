@@ -9,6 +9,6 @@
 
 ## CPU Instruction Set
 
-|INS|HEX|
-|-------|
+| INS | HEX |
+|-----------|
 
